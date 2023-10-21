@@ -18,7 +18,7 @@ const Login = () => {
       await logIn(email, password);
       navigate("/home");
     } catch (err) {
-      setError(err.message);
+      setError("Incorrect password. Please try again.");
     }
   };
 
