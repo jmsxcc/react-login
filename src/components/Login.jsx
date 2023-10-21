@@ -14,6 +14,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError();
+
+    if (!email) {
+      setError("Please enter a email.");
+      return;
+    }
+
+    if (!password) {
+      setError("Please enter a password.");
+      return;
+    }
+
     try {
       await logIn(email, password);
       navigate("/home");
